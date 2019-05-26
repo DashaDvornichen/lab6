@@ -1,0 +1,29 @@
+{% extends "menu.html" %}
+{% block content %}
+    <title> Архив всех статей</title>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/static/css/article.css">
+<body class="archive">
+<div class="header">
+    <img src="{{ STATIC_URL }}/static/logo.png">
+
+</div>
+<div class="archive">
+ {% for post in posts %}
+    <div class="one-post">
+        <h2 class="post-title">
+            <a href="/articles/{{ post.id }}">{{ post.title }}</a>
+        </h2>
+        <div class="article-info">
+            <div class="article-author">
+                {{ post.author.username }}
+            </div>
+
+            <div class="article-created-date">
+                {{ post.created_date }}
+            </div>
+        </div>
+        <p class="article-text">{{ post.get_excerpt }}</p>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
+<ul>
+	<li><a href="/">Все записи</a></li>
+	{% if user.is_authenticated %}
+		<li class="right"><a href="/articles/new">Написать статью</a></li>
+		<li class="right"><a href="/logout">Выйти из аккаунта</a></li>
+	{% else %}
+		<li class="right"><a href="/login">Войти в аккаунт</a></li>
+		<li class="right"><a href="/registr">Зарегистрироваться</a></li>
+	{% endif %}
+</ul>
+{% block content %} {% endblock %}

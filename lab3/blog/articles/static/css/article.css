@@ -1,0 +1,90 @@
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+}
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.archive {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.post-title a {
+    color: #ffffff;
+}
+.article-author {
+    width: 50%;
+    float: left;
+    font-size: 20px;
+}
+.article-created-date {
+    text-align: right;
+}
+.article {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.article-created-date {
+    font-style: italic;
+    font-size: 20px;
+}
+.one-post {
+    border: 1px solid black;
+    margin: 30px;
+    padding: 16px;
+}
+.content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+.name {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+.save {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+.right
+{
+	float: right;
+}
+ul
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+	list-style-type: none;
+    border: 1px solid black;
+	padding: 0;
+	overflow: hidden;
+}
+li
+{
+	float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}

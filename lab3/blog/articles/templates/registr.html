@@ -1,0 +1,19 @@
+{% extends "menu.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title> Архив всех статей</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
+</head>
+	<div class="content">
+		<h1>Создать аккаунт</h1>
+		<form method="POST"> {% csrf_token %}
+			<input type="text" name="username" placeholder="Логин">
+			<input type="password" name="password" placeholder="Пароль">
+			<input type="email" name="email" placeholder="Почта">
+			<input type="submit" value="Зарегистрироваться">
+		</form>
+		{{ form.errors }}
+	</div>
+
+{% endblock %}

@@ -2,7 +2,7 @@
 {% block content %}
     <head>
     <meta charset="UTF-8">
-    <title>втав</title>
+    <title>Авторизация</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
 </head>
 <html>
@@ -14,6 +14,11 @@
 			<input type="submit" value="Войти">
 		</form>
 		{{ form.errors }}
+         {% if error %}
+            {% for error in error %}
+                <h2 class="error">{{ error}}</h2>
+                {% endfor %}
+            {% endif %}
 	</div>
 </html>
 {% endblock %}

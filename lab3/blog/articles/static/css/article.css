@@ -1,11 +1,12 @@
 body {
-    background: #1abc9c;
+    background: #b1e0cc;
     font-family: Tahoma, Arial, sans-serif;
-    color: #ffffff;
+    color: black;
+    font-size: 21px;
 }
 .header img {
     display: block;
-    width: 318px;
+    width: 382px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -15,7 +16,7 @@ body {
     margin-right: auto;
 }
 .post-title a {
-    color: #ffffff;
+    color: black;
 }
 .article-author {
     width: 50%;
@@ -47,6 +48,11 @@ body {
 }
 h1 {
     text-align: center;
+}
+create_post.h2 {
+    text-align: center;
+
+    color: #007e4f;
 }
 textarea {
     width: 100%;
@@ -83,7 +89,7 @@ li
 }
 li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;

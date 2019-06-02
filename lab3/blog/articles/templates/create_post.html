@@ -2,8 +2,8 @@
 {% block content %}
     <head>
     <meta charset="UTF-8">
-    <title> Архиыирыитей</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
+    <title> Создание статьи</title>
+    <link rel="stylesheet"  type="text/css"  href="{{ STATIC_URL }}/static/css/article.css">
 </head>
 <html>
 
@@ -12,13 +12,18 @@
 
 </div>
 	<div class="content">
-		<h1>Создать аккаунт</h1>
+		<h2>Создать статью</h2>
 		<form method="POST"> {% csrf_token %}
 			<input  class="name" type="text" name="title" placeholder="Название статьи...">
 			<textarea type="text" name="text"></textarea>
 			<input  class="save" type="submit" value="Добавить статью...">
 		</form>
 		{{ form.errors }}
+        {% if error %}
+            {% for error in error %}
+                <h2 class="error">{{ error}}</h2>
+                {% endfor %}
+            {% endif %}
 	</div>
 </html>
 {% endblock %}

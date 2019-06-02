@@ -17,6 +17,7 @@ def get_article(request, id):
 
 
 def create_post(request):
+    error = []
     if not request.user.is_anonymous:
         if request.method == "POST":
             form = {
@@ -24,19 +25,20 @@ def create_post(request):
                 'title': request.POST["title"]
             }
             if form["text"] and form["title"]:
-                if len(Article.objects.filter(title=form['title'])) > 0:
-                    raise Http404
-                else:
+
+                if len(Article.objects.filter(title=form['title'])) == 0:
                     Article.objects.create(text=form["text"],
                                            title=form["title"],
                                            author=request.user)
                     article = Article.objects.get(title=form['title'])
                     return redirect('get_article', article.id)
+                else:
+                    error.append("Введите уникальное название!")
+                    return render(request, 'create_post.html', {'form': form, 'error': error})
             else:
                 form['errors'] = u"Не все поля заполнены"
                 return render(request, 'create_post.html', {'form': form})
         else:
-
             return render(request, 'create_post.html', {})
     else:
         raise Http404
@@ -68,6 +70,7 @@ def create_user(request):
 
 
 def dj_login(request):
+    error = []
     print(request.user.is_anonymous)
     if request.user.is_anonymous:
         if request.method == "POST":
@@ -81,7 +84,8 @@ def dj_login(request):
                     login(request, someone)
                     return redirect('/')
                 else:
-                    raise Http404
+                    error.append("Вы ввели неправильно логин и/или пароль!")
+                    return render(request, 'login.html', {'form': form, 'error': error})
             else:
                 raise Http404
         else:
